@@ -1,0 +1,19 @@
+{
+  "name": "monitoring",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "event-loop-stats": "^1.4.1",
+    "express": "^4.17.2",
+    "ping": "^0.4.1",
+    "socket.io": "^4.4.1"
+  }
+}
