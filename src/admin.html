@@ -15,22 +15,21 @@
     <title>Document</title>
   </head>
   <body>
-    <div id="content"></div>
+    <div id="content">Your are Connected as Admin</div>
 
     <script src="/socket.io/socket.io.js"></script>
     <script>
       var socket = io();
       var content = document.getElementById('content');
-      socket.on('eventloop', (result) => {
+      socket.emit('joinAdmin', { name: 'admin name' }, (err) => {
+        if (err) {
+          alert(err);
+        }
+      });
+      socket.on('data', (result) => {
         console.log(result);
       });
-      socket.on('cpu', (result) => {
-        console.log(result);
-      });
-      socket.on('resource', (result) => {
-        console.log(result);
-      });
-      socket.on('memory', (result) => {
+      socket.on('leave', (result) => {
         console.log(result);
       });
     </script>
