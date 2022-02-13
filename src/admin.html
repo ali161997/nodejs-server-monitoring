@@ -21,7 +21,7 @@
     <script>
       var socket = io();
       var content = document.getElementById('content');
-      socket.emit('joinAdmin', { name: 'admin name' }, (err) => {
+      socket.emit('joinAdmin', { name: 'ali hashem' }, (err) => {
         if (err) {
           alert(err);
         }
@@ -30,6 +30,9 @@
         console.log(result);
       });
       socket.on('leave', (result) => {
+        console.log(result);
+      });
+      socket.on('join', (result) => {
         console.log(result);
       });
     </script>

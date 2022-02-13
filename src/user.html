@@ -22,7 +22,7 @@
     <script>
       var socket = io();
       socket.emit('joinUser', { name: 'peter paul' }, (err) => {
-        console.log('ali hasme');
+          
         if (err) {
           console.log(err);
         }
