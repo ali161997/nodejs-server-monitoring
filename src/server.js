@@ -14,6 +14,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const usersRoom = 12345;
 const adminRoom = 67891;
+const port=process.env.PORT||8000;
 
 app.get('/user', (req, res) => {
   res.sendFile(__dirname + '/user.html');
@@ -57,6 +58,6 @@ io.on('connection', (socket) => {
   // ** send current memory and cpu usage usage for every 5000 millisconds
 });
 
-server.listen(8000, () => {
+server.listen(port, () => {
   console.log('listening on *:8000');
 });
